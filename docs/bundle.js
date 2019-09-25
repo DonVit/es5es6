@@ -7,12 +7,20 @@ var es5sum = require('./src/func_es5.js').sum;
 var es5CircleSquare = require('./src/func_es5.js').circleSquare;
 var es5FractionViewOf = require('./src/func_es5.js').fractionViewOf;
 
+var ar = [1, 2, 3, 4];
+var far = function far(e) {
+  return ar.find(function (el) {
+    return el == e;
+  });
+};
+
 console.log('test es5 sum 1+2=' + es5sum(1, 2));
 console.log('test es6 sum 1+2=' + (0, _func_es.sum)(1, 2));
 console.log('test es5 circle square of radius 2 =' + es5CircleSquare(2));
 console.log('test es6 circle square of radius 2 =' + (0, _func_es.circleSquare)(2));
 console.log('test es5 fraction of radius .5 =' + es5FractionViewOf(.5));
 console.log('test es6 fraction of radius .5 =' + (0, _func_es.fractionViewOf)(.5));
+console.log('find in array =' + far(1));
 
 document.write('welcome to my app');
 
@@ -21,7 +29,7 @@ function component() {
 
   // Lodash, currently included via a script, is required for this line to work
   //element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.innerHTML = 'test output';
+  element.innerHTML = 'div test output';
   return element;
 }
 
