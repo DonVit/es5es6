@@ -7,11 +7,11 @@ var es5sum = require('./src/func_es5.js').sum;
 var es5CircleSquare = require('./src/func_es5.js').circleSquare;
 var es5FractionViewOf = require('./src/func_es5.js').fractionViewOf;
 
-var ar = [1, 2, 3, 4];
+var ar = [{ a: 10, b: 100 }, { a: 20, b: 200 }, { a: 30, b: 300 }, { a: 40, b: 400 }];
 var far = function far(e) {
-  return ar.find(function (el) {
-    return el == e;
-  });
+    return ar.find(function (el) {
+        return el.a == e;
+    });
 };
 
 console.log('test es5 sum 1+2=' + es5sum(1, 2));
@@ -20,17 +20,17 @@ console.log('test es5 circle square of radius 2 =' + es5CircleSquare(2));
 console.log('test es6 circle square of radius 2 =' + (0, _func_es.circleSquare)(2));
 console.log('test es5 fraction of radius .5 =' + es5FractionViewOf(.5));
 console.log('test es6 fraction of radius .5 =' + (0, _func_es.fractionViewOf)(.5));
-console.log('find in array =' + far(1));
+console.log('find in array =' + far(10).b);
 
 document.write('welcome to my app');
 
 function component() {
-  var element = document.createElement('div');
+    var element = document.createElement('div');
 
-  // Lodash, currently included via a script, is required for this line to work
-  //element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.innerHTML = 'div test output';
-  return element;
+    // Lodash, currently included via a script, is required for this line to work
+    //element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+    element.innerHTML = 'div test output';
+    return element;
 }
 
 document.body.appendChild(component());
