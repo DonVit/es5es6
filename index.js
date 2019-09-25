@@ -1,3 +1,5 @@
+import 'core-js';
+
 var es5sum = require('./src/func_es5.js').sum
 var es5CircleSquare = require('./src/func_es5.js').circleSquare
 var es5FractionViewOf = require('./src/func_es5.js').fractionViewOf
